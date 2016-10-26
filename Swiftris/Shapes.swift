@@ -29,7 +29,7 @@ class SquareShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
         return [
             Orientation.Zero:       [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
             Orientation.OneEighty:  [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
@@ -274,7 +274,7 @@ class SShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
         return [
             Orientation.Zero:       [blocks[SecondBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
@@ -325,7 +325,7 @@ class ZShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
         return [
             Orientation.Zero:       [blocks[SecondBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
