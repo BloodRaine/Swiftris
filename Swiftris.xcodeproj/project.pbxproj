@@ -24,6 +24,7 @@
 		A8558E711DBFDD5C003721A1 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E701DBFDD5C003721A1 /* Block.swift */; };
 		A8558E731DBFFA49003721A1 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E721DBFFA49003721A1 /* Shape.swift */; };
 		A8558E7B1DC014B3003721A1 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E7A1DC014B3003721A1 /* Shapes.swift */; };
+		A8558E7D1DC06ECB003721A1 /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E7C1DC06ECB003721A1 /* Swiftris.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A8558E701DBFDD5C003721A1 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		A8558E721DBFFA49003721A1 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		A8558E7A1DC014B3003721A1 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		A8558E7C1DC06ECB003721A1 /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				A8558E701DBFDD5C003721A1 /* Block.swift */,
 				A8558E721DBFFA49003721A1 /* Shape.swift */,
 				A8558E7A1DC014B3003721A1 /* Shapes.swift */,
+				A8558E7C1DC06ECB003721A1 /* Swiftris.swift */,
 				A8558E511DBFBAEA003721A1 /* GameViewController.swift */,
 				A8558E6E1DBFCA0B003721A1 /* Array2D.swift */,
 				A8558E531DBFBAEA003721A1 /* Main.storyboard */,
@@ -192,6 +195,7 @@
 				A8558E731DBFFA49003721A1 /* Shape.swift in Sources */,
 				A8558E6F1DBFCA0B003721A1 /* Array2D.swift in Sources */,
 				A8558E711DBFDD5C003721A1 /* Block.swift in Sources */,
+				A8558E7D1DC06ECB003721A1 /* Swiftris.swift in Sources */,
 				A8558E7B1DC014B3003721A1 /* Shapes.swift in Sources */,
 				A8558E521DBFBAEA003721A1 /* GameViewController.swift in Sources */,
 				A8558E4A1DBFBAEA003721A1 /* AppDelegate.swift in Sources */,
@@ -358,6 +362,7 @@
 				A8558E601DBFBAEA003721A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

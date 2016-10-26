@@ -47,7 +47,7 @@ class Block: Hashable, CustomStringConvertible {
     var row: Int
     var sprite: SKSpriteNode?
     
-    var spriteNeame: String {
+    var spriteName: String {
         return color.spriteName
     }
     
