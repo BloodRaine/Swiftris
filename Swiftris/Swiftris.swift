@@ -237,6 +237,19 @@ class Swiftris {
         delegate?.gameShapeDidMove(swiftris: self)
     }
     
+    func moveShapeRight() {
+        guard let shape = fallingShape else {
+            return
+        }
+        
+        shape.shiftRightByOneColumn()
+        guard detectIllegalPlacement() == false else {
+            shape.shiftRightByOneColumn()
+            return
+        }
+        delegate?.gameShapeDidMove(swiftris: self)
+    }
+    
     func removeAllBlocks() -> Array<Array<Block>> {
         var allBlocks = Array<Array<Block>>()
         

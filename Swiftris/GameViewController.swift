@@ -14,6 +14,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     var scene: GameScene!
     var swiftris:Swiftris!
+    
+    var panPointReference:CGPoint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,26 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
         swiftris.rotateShape()
+    }
+    
+    @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
+        let currentPoint = sender.translation(in: self.view)
+        if let originalPoint = panPointReference {
+            if abs(currentPoint.x - originalPoint.x) > (BlockSize * 0.9) {
+                if sender.velocity(in: self.view).x > CGFloat(0) {
+                    swiftris.moveShapeRight()
+                    panPointReference = currentPoint
+                } else {
+                    swiftris.moveShapeLeft()
+                }
+            }
+        } else if sender.state == .began {
+            panPointReference = currentPoint
+        }
+    }
+    
+    @IBAction func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        swiftris.dropShape()
     }
     
     func didTick() {
@@ -96,9 +118,15 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     func gameDidLevelUp(swiftris: Swiftris) {
         
     }
+    
     func gameShapeDidDrop(swiftris: Swiftris) {
+        scene.stopTicking()
         
+        scene.redrawShape(shape: swiftris.fallingShape!) {
+            swiftris.letShapeFall()
+        }
     }
+    
     func gameShapeDidLand(swiftris: Swiftris) {
         scene.stopTicking()
         nextShape()
