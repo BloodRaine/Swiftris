@@ -131,7 +131,25 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         scene.stopTicking()
         nextShape()
     }
+    
     func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(shape: swiftris.fallingShape!) {}
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer is UISwipeGestureRecognizer {
+            if otherGestureRecognizer is UIPanGestureRecognizer {
+                return true
+            }
+        } else if gestureRecognizer is UIPanGestureRecognizer {
+            if otherGestureRecognizer is UITapGestureRecognizer {
+                return true
+            }
+        }
+        return false
     }
 }
