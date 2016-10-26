@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, SwiftrisDelegate {
+class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate {
     
     var scene: GameScene!
     var swiftris:Swiftris!
@@ -49,6 +49,10 @@ class GameViewController: UIViewController, SwiftrisDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+        swiftris.rotateShape()
     }
     
     func didTick() {
