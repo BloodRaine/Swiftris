@@ -35,7 +35,7 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
         
         scene.addPreviewShapeToScene(shape: swiftris.nextShape!) {
-            self.swiftris.nextShape?.moveTo(column: StartingColumn, row: startingRow)
+            self.swiftris.nextShape?.moveTo(column: StartingColumn, row: StartingRow)
             self.scene.movePreviewShape(shape: self.swiftris.nextShape!) {
                 let nextShapes = self.swiftris.newShape()
                 self.scene.startTicking()

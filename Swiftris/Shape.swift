@@ -80,13 +80,12 @@ class Shape: Hashable, CustomStringConvertible {
     }
     
     final func lowerShapeByOneRow() {
-        shiftBy(columns: 0,rows:1)
+        shiftBy(columns: 0, rows:1)
     }
     
     final func shiftBy(columns: Int, rows: Int) {
         self.column += columns
         self.row += rows
-        
         for block in blocks {
             block.column += columns
             block.row += rows

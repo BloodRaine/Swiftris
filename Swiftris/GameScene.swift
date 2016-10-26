@@ -112,7 +112,7 @@ class GameScene: SKScene {
         run(SKAction.wait(forDuration: 0.4), completion: completion)
     }
     
-    func movePreviewShape(shape:Shape, completion:() -> ()) {
+    func movePreviewShape(shape:Shape, completion:@escaping () -> ()) {
         for block in shape.blocks {
             let sprite = block.sprite!
             let moveTo = pointForColumn(column: block.column, row:block.row)
@@ -121,21 +121,20 @@ class GameScene: SKScene {
             sprite.run(
                 SKAction.group([moveToAction, SKAction.fadeAlpha(to: 1.0, duration: 0.2)]), completion: {})
         }
+        run(SKAction.wait(forDuration: 0.2), completion: completion)
     }
     
     func redrawShape(shape:Shape, completion:@escaping () -> ()) {
         for block in shape.blocks {
             let sprite = block.sprite!
-            let moveTo = pointForColumn(column: block.column, row: block.row)
+            let moveTo = pointForColumn(column: block.column, row:block.row)
             let moveToAction:SKAction = SKAction.move(to: moveTo, duration: 0.05)
             moveToAction.timingMode = .easeOut
-            
             if block == shape.blocks.last {
                 sprite.run(moveToAction, completion: completion)
             } else {
                 sprite.run(moveToAction)
             }
-            
         }
     }
 }
