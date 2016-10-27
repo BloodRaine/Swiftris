@@ -44,18 +44,18 @@ class GameScene: SKScene {
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
         
-        run(SKAction.repeatForever(SKAction.playSoundFileNamed("Sounds/heme.mp3", waitForCompletion: true)))
+        //run(SKAction.repeatForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)))
         
     }
     
     func playSound(sound: String) {
-        run(SKAction(.playSoundFileNamed(sound, waitForCompletion: false)))
+        run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
     }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("NSCoder not supported")
     }
-    
+ 
     override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         guard let lastTick = lastTick else {
@@ -181,4 +181,5 @@ class GameScene: SKScene {
         }
         run(SKAction.wait(forDuration: longestDuration), completion: completion)
     }
+ 
 }
