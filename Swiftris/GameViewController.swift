@@ -16,25 +16,28 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     var swiftris:Swiftris!
     
     var panPointReference:CGPoint?
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // configure the view
+        // Configure the view.
         let skView = view as! SKView
         skView.isMultipleTouchEnabled = false
         
-        // create the config scene
+        // Create and configure the scene.
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
-        
         scene.tick = didTick
         
         swiftris = Swiftris()
         swiftris.delegate = self
         swiftris.beginGame()
         
-        // Present the scene
+        // Present the scene.
         skView.presentScene(scene)
         
         /*
@@ -77,21 +80,32 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         swiftris.dropShape()
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer is UISwipeGestureRecognizer {
+            if otherGestureRecognizer is UIPanGestureRecognizer {
+                return true
+            }
+        } else if gestureRecognizer is UIPanGestureRecognizer {
+            if otherGestureRecognizer is UITapGestureRecognizer {
+                return true
+            }
+        }
+        return false
+    }
+    
     func didTick() {
-        
         swiftris.letShapeFall()
-        
-        //swiftris.fallingShape?.lowerShapeByOneRow()
-        //scene.redrawShape(shape: swiftris.fallingShape!, completion: {})
     }
     
     func nextShape() {
         let newShapes = swiftris.newShape()
-        
         guard let fallingShape = newShapes.fallingShape else {
             return
         }
-        
         self.scene.addPreviewShapeToScene(shape: newShapes.nextShape!) {}
         self.scene.movePreviewShape(shape: fallingShape) {
             self.view.isUserInteractionEnabled = true
@@ -100,6 +114,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     func gameDidBegin(swiftris: Swiftris) {
+        
         // The following is false when restarting a new game
         if swiftris.nextShape != nil && swiftris.nextShape!.blocks[0].sprite == nil {
             scene.addPreviewShapeToScene(shape: swiftris.nextShape!) {
@@ -121,7 +136,6 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     func gameShapeDidDrop(swiftris: Swiftris) {
         scene.stopTicking()
-        
         scene.redrawShape(shape: swiftris.fallingShape!) {
             swiftris.letShapeFall()
         }
@@ -134,22 +148,5 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(shape: swiftris.fallingShape!) {}
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        if gestureRecognizer is UISwipeGestureRecognizer {
-            if otherGestureRecognizer is UIPanGestureRecognizer {
-                return true
-            }
-        } else if gestureRecognizer is UIPanGestureRecognizer {
-            if otherGestureRecognizer is UITapGestureRecognizer {
-                return true
-            }
-        }
-        return false
     }
 }

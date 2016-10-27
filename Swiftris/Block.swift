@@ -8,10 +8,11 @@
 
 import SpriteKit
 
-let numberOfColors: UInt32 = 6
+let NumberOfColors: UInt32 = 6
 
 enum BlockColor: Int, CustomStringConvertible {
-    case Blue = 0, Orange,Purple,Red,Teal,Yellow
+    
+    case Blue = 0, Orange, Purple, Red, Teal, Yellow
     
     var spriteName: String {
         switch self {
@@ -34,21 +35,24 @@ enum BlockColor: Int, CustomStringConvertible {
         return self.spriteName
     }
     
-    static func random() -> BlockColor{
-        return BlockColor(rawValue: Int(arc4random_uniform(numberOfColors)))!
+    static func random() -> BlockColor {
+        return BlockColor(rawValue:Int(arc4random_uniform(NumberOfColors)))!
     }
 }
 
 class Block: Hashable, CustomStringConvertible {
-    // constants
-    let color : BlockColor
+    // Constants
+    let color: BlockColor
     
+    // Variables
     var column: Int
     var row: Int
+    
+    // Lazy loading
     var sprite: SKSpriteNode?
     
     var spriteName: String {
-        return color.spriteName
+        return color.description
     }
     
     var hashValue: Int {
@@ -56,7 +60,7 @@ class Block: Hashable, CustomStringConvertible {
     }
     
     var description: String {
-        return "\(color): [\(column), \(row)]"
+        return "\(color) (\(column), \(row))"
     }
     
     init(column:Int, row:Int, color:BlockColor) {
@@ -69,4 +73,3 @@ class Block: Hashable, CustomStringConvertible {
 func ==(lhs: Block, rhs: Block) -> Bool {
     return lhs.column == rhs.column && lhs.row == rhs.row && lhs.color.rawValue == rhs.color.rawValue
 }
-

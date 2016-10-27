@@ -15,11 +15,14 @@ class SquareShape:Shape {
      // #9
      | 0•| 1 |
      | 2 | 3 |
+     
      • marks the row/column indicator for the shape
+     
      */
     
     // The square shape will not rotate
     
+    // #10
     override var blockRowColumnPositions: [Orientation: Array<(columnDiff: Int, rowDiff: Int)>] {
         return [
             Orientation.Zero: [(0, 0), (1, 0), (0, 1), (1, 1)],
@@ -29,7 +32,8 @@ class SquareShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    // #11
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
             Orientation.OneEighty:  [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
@@ -44,34 +48,36 @@ class SquareShape:Shape {
 //  TShape.swift
 
 
-
 class TShape:Shape {
-    
     /*
      Orientation 0
+     
      • | 0 |
      | 1 | 2 | 3 |
      
      Orientation 90
+     
      • | 1 |
      | 2 | 0 |
      | 3 |
      
      Orientation 180
+     
      •
      | 1 | 2 | 3 |
      | 0 |
      
      Orientation 270
+     
      • | 1 |
      | 0 | 2 |
      | 3 |
      
      • marks the row/column indicator for the shape
+     
      */
     
-    
-    override var blockRowColumnPositions: [Orientation : Array<(columnDiff: Int, rowDiff: Int)>] {
+    override var blockRowColumnPositions: [Orientation: Array<(columnDiff: Int, rowDiff: Int)>] {
         return [
             Orientation.Zero:       [(1, 0), (0, 1), (1, 1), (2, 1)],
             Orientation.Ninety:     [(2, 1), (1, 0), (1, 1), (1, 2)],
@@ -80,7 +86,7 @@ class TShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[SecondBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[FourthBlockIdx]],
@@ -89,36 +95,38 @@ class TShape:Shape {
         ]
     }
 }
-
 //
 //  LineShape.swift
-
 
 class LineShape:Shape {
     /*
      Orientations 0 and 180:
+     
      | 0•|
      | 1 |
      | 2 |
      | 3 |
      
      Orientations 90 and 270:
+     
      | 0 | 1•| 2 | 3 |
      
      • marks the row/column indicator for the shape
      
      */
     
-    override var blockRowColumnPositions: [Orientation : Array<(columnDiff: Int, rowDiff: Int)>] {
+    // Hinges about the second block
+    
+    override var blockRowColumnPositions: [Orientation: Array<(columnDiff: Int, rowDiff: Int)>] {
         return [
-            Orientation.Zero: [(0, 0), (0, 1), (0, 2), (0, 3)],
-            Orientation.Ninety: [(-1, 0), (0, 0), (1, 0), (2, 0)],
-            Orientation.OneEighty: [(0, 0), (0, 1), (0, 2), (0, 3)],
-            Orientation.TwoSeventy: [(-1, 0), (0, 0), (1, 0), (2, 0)]
+            Orientation.Zero:       [(0, 0), (0, 1), (0, 2), (0, 3)],
+            Orientation.Ninety:     [(-1,0), (0, 0), (1, 0), (2, 0)],
+            Orientation.OneEighty:  [(0, 0), (0, 1), (0, 2), (0, 3)],
+            Orientation.TwoSeventy: [(-1,0), (0, 0), (1, 0), (2, 0)]
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[FourthBlockIdx]],
             Orientation.Ninety:     blocks,
@@ -126,9 +134,7 @@ class LineShape:Shape {
             Orientation.TwoSeventy: blocks
         ]
     }
-    
 }
-
 
 // LShape.swift
 class LShape:Shape {
@@ -172,7 +178,7 @@ class LShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[SecondBlockIdx], blocks[FourthBlockIdx]],
@@ -181,7 +187,6 @@ class LShape:Shape {
         ]
     }
 }
-
 // JShape.swift
 
 class JShape:Shape {
@@ -224,7 +229,7 @@ class JShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[SecondBlockIdx], blocks[ThirdBlockIdx]],
@@ -233,6 +238,7 @@ class JShape:Shape {
         ]
     }
 }
+
 
 // SShape
 
@@ -274,7 +280,7 @@ class SShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[SecondBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
@@ -325,7 +331,7 @@ class ZShape:Shape {
         ]
     }
     
-    override var bottomBlocksForOrientation: [Orientation : Array<Block>] {
+    override var bottomBlocksForOrientation: [Orientation: Array<Block>] {
         return [
             Orientation.Zero:       [blocks[SecondBlockIdx], blocks[FourthBlockIdx]],
             Orientation.Ninety:     [blocks[FirstBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]],
@@ -334,4 +340,3 @@ class ZShape:Shape {
         ]
     }
 }
-
