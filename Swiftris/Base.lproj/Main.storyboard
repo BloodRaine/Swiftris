@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yaq-bk-0XO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="jH1-yl-Og4">
+            <objects>
+                <viewController id="yaq-bk-0XO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTi-aO-bc6"/>
+                        <viewControllerLayoutGuide type="bottom" id="EHv-q2-E73"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GPt-DC-e39">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="65r-F7-FxT">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-EA-ivC">
+                                        <state key="normal" title="Play Game"/>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="presentation" id="Ik2-cs-YEm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-Gu-wAW">
+                                        <state key="normal" title="How To Play"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wg-si-oHY">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20212287303664922" green="0.20212287303664922" blue="0.20212287303664922" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="65r-F7-FxT" firstAttribute="top" secondItem="MTi-aO-bc6" secondAttribute="bottom" constant="200" id="D3w-Ck-Eox"/>
+                            <constraint firstItem="65r-F7-FxT" firstAttribute="leading" secondItem="GPt-DC-e39" secondAttribute="leadingMargin" id="W00-zh-5n4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="65r-F7-FxT" secondAttribute="trailing" id="YYo-JU-uUF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieO-O0-xm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-817" y="62"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -66,9 +108,36 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-PW-hsM">
+                                <frame key="frameInset" minX="224" minY="345" width="84" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-lD-F29">
+                                <frame key="frameInset" minX="224" minY="345" width="84" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                            </button>
+                            <stackView hidden="YES" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="D1y-xq-G2H">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dju-u8-cG8">
+                                        <state key="normal" title="Main Menu"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-tk-AVk">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-en-rB8">
+                                        <state key="normal" title="Resume"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="D1y-xq-G2H" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="Va6-AP-NOm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D1y-xq-G2H" secondAttribute="trailing" id="nUN-tk-UET"/>
+                            <constraint firstItem="D1y-xq-G2H" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="119" id="uBh-x3-OJw"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n0e-aa-dH0" appends="YES" id="tF7-dA-T4Q"/>
                             <outletCollection property="gestureRecognizers" destination="4EW-Zv-kIp" appends="YES" id="CI5-vp-1Qr"/>
@@ -99,6 +168,10 @@
                         <outlet property="delegate" destination="BV1-FR-VrT" id="oBm-e9-Cnl"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" id="s6B-kH-EbV">
+                    <rect key="frame" x="0.0" y="0.0" width="84" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="61.619190404797607"/>
         </scene>
