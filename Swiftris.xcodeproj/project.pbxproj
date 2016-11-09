@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A82A21D11DD396E6002F248E /* ScreenMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A21D01DD396E6002F248E /* ScreenMotion.swift */; };
+		A82A21D31DD3980C002F248E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A21D21DD3980C002F248E /* ViewController.swift */; };
+		A82A21D51DD3AC9C002F248E /* SwiftrisShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A21D41DD3AC9C002F248E /* SwiftrisShape.swift */; };
 		A8558E4A1DBFBAEA003721A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E491DBFBAEA003721A1 /* AppDelegate.swift */; };
 		A8558E4E1DBFBAEA003721A1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A8558E4D1DBFBAEA003721A1 /* Actions.sks */; };
 		A8558E501DBFBAEA003721A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8558E4F1DBFBAEA003721A1 /* GameScene.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A82A21D01DD396E6002F248E /* ScreenMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenMotion.swift; sourceTree = "<group>"; };
+		A82A21D21DD3980C002F248E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A82A21D41DD3AC9C002F248E /* SwiftrisShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftrisShape.swift; sourceTree = "<group>"; };
 		A8558E461DBFBAEA003721A1 /* Swiftris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8558E491DBFBAEA003721A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8558E4D1DBFBAEA003721A1 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -95,6 +101,9 @@
 				A8558E5B1DBFBAEA003721A1 /* Info.plist */,
 				A8558E7E1DC25779003721A1 /* Sounds */,
 				A8558E6C1DBFBD00003721A1 /* Sprites.atlas */,
+				A82A21D01DD396E6002F248E /* ScreenMotion.swift */,
+				A82A21D21DD3980C002F248E /* ViewController.swift */,
+				A82A21D41DD3AC9C002F248E /* SwiftrisShape.swift */,
 			);
 			path = Swiftris;
 			sourceTree = "<group>";
@@ -191,7 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82A21D31DD3980C002F248E /* ViewController.swift in Sources */,
 				A8558E501DBFBAEA003721A1 /* GameScene.swift in Sources */,
+				A82A21D51DD3AC9C002F248E /* SwiftrisShape.swift in Sources */,
 				A8558E731DBFFA49003721A1 /* Shape.swift in Sources */,
 				A8558E6F1DBFCA0B003721A1 /* Array2D.swift in Sources */,
 				A8558E711DBFDD5C003721A1 /* Block.swift in Sources */,
@@ -199,6 +210,7 @@
 				A8558E7B1DC014B3003721A1 /* Shapes.swift in Sources */,
 				A8558E521DBFBAEA003721A1 /* GameViewController.swift in Sources */,
 				A8558E4A1DBFBAEA003721A1 /* AppDelegate.swift in Sources */,
+				A82A21D11DD396E6002F248E /* ScreenMotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

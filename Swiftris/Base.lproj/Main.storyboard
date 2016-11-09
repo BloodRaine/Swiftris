@@ -10,43 +10,59 @@
         <!--View Controller-->
         <scene sceneID="jH1-yl-Og4">
             <objects>
-                <viewController id="yaq-bk-0XO" sceneMemberID="viewController">
+                <viewController id="yaq-bk-0XO" customClass="ViewController" customModule="Swiftris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MTi-aO-bc6"/>
                         <viewControllerLayoutGuide type="bottom" id="EHv-q2-E73"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GPt-DC-e39">
+                    <view key="view" contentMode="scaleToFill" id="GPt-DC-e39" customClass="ScreenMotion" customModule="Swiftris" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="65r-F7-FxT">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-EA-ivC">
-                                        <state key="normal" title="Play Game"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-EA-ivC">
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
+                                        <state key="normal" title="Play Game" backgroundImage="button"/>
                                         <connections>
                                             <segue destination="BV1-FR-VrT" kind="presentation" id="Ik2-cs-YEm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-Gu-wAW">
-                                        <state key="normal" title="How To Play"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
+                                        <state key="normal" title="How To Play" backgroundImage="button">
+                                            <color key="titleColor" red="0.99241146585803552" green="0.98023917478575762" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="howToPlayPressed:" destination="yaq-bk-0XO" eventType="touchUpInside" id="nSC-kd-nSX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wg-si-oHY">
-                                        <state key="normal" title="Button"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
+                                        <state key="normal" title="Dont Touch This" backgroundImage="button">
+                                            <color key="titleColor" red="0.97622299089470932" green="0.99510899901924588" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dontTouchThisPressed:" destination="yaq-bk-0XO" eventType="touchUpInside" id="0XS-gF-qah"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20212287303664922" green="0.20212287303664922" blue="0.20212287303664922" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17454880984904908" green="0.17240790459664421" blue="0.17588350785340312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="65r-F7-FxT" firstAttribute="top" secondItem="MTi-aO-bc6" secondAttribute="bottom" constant="200" id="D3w-Ck-Eox"/>
                             <constraint firstItem="65r-F7-FxT" firstAttribute="leading" secondItem="GPt-DC-e39" secondAttribute="leadingMargin" id="W00-zh-5n4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="65r-F7-FxT" secondAttribute="trailing" id="YYo-JU-uUF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="motionView" destination="GPt-DC-e39" id="Rkm-1e-4yP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieO-O0-xm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817" y="62"/>
+            <point key="canvasLocation" x="-818.39999999999998" y="61.619190404797607"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -131,7 +147,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.15312090964921465" green="0.15312090964921465" blue="0.15312090964921465" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="D1y-xq-G2H" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="Va6-AP-NOm"/>
@@ -177,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button" width="200" height="71"/>
         <image name="whitebg" width="84" height="100"/>
     </resources>
 </document>
