@@ -30,7 +30,6 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         let skView = view as! SKView
         skView.isMultipleTouchEnabled = false
         
-        
         // Create and configure the scene.
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
@@ -180,7 +179,6 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         } else {
             nextShape()
         }
- 
     }
     
     func gameShapeDidMove(swiftris: Swiftris) {

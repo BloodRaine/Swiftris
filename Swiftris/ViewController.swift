@@ -21,13 +21,17 @@ class ViewController: UIViewController {
                                        name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appWillResignActive),
                                        name: Notification.Name.UIApplicationWillResignActive, object: nil)
-
         motionView.initialize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        motionView.animating = true
     }
     
     func appDidBecomeActive(_ notification: Notification)   {
         motionView.animating = true
     }
+    
     func appWillResignActive(_ notification: Notification)  {
         motionView.animating = false
     }
