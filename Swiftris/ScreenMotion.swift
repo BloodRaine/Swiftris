@@ -16,7 +16,7 @@ class ScreenMotion: UIView {
     private let colliderBehavior = UICollisionBehavior()
     private let elasticBehavior = UIDynamicItemBehavior()
     
-    public var elastic = false
+    public var elastic = Bool()
     
     // Acceleration due to gravity (only the x,y components). Down is +y. Units of g's.
     private var accelerationVector = (ax: 0.0, ay: 1.0) {
@@ -35,6 +35,7 @@ class ScreenMotion: UIView {
                 animator.addBehavior(gravityBehavior)
                 animator.addBehavior(colliderBehavior)
                 animator.addBehavior(elasticBehavior)
+                
             }else {
                 stopMotionUpdates()
                 animator.removeBehavior(gravityBehavior)
@@ -48,13 +49,10 @@ class ScreenMotion: UIView {
         animator = UIDynamicAnimator(referenceView: self)
         // This includes our view's boundaries as collision boundaries.
         colliderBehavior.translatesReferenceBoundsIntoBoundary = true
-        if (elastic == true) {
-            elasticBehavior.elasticity = 0.6
-        }
         
         // Add a piece to the scene.
         for _ in 0...40 {
-            addObject(atPoint: CGPoint(x: 170.0, y: 140.0))
+            addObject(atPoint: CGPoint(x: 160.0  , y: 130.0))
         }
     }
     
@@ -63,6 +61,7 @@ class ScreenMotion: UIView {
         addSubview(piece)
         gravityBehavior.addItem(piece)
         colliderBehavior.addItem(piece)
+        elasticBehavior.addItem(piece)
         piece.superview?.sendSubview(toBack: piece)
     }
     
@@ -76,8 +75,12 @@ class ScreenMotion: UIView {
                     [unowned self] (deviceMotion, error) in
                     if let gravity = deviceMotion?.gravity  {
                         self.accelerationVector = (ax: gravity.x, ay: -gravity.y)
+                        if (self.elastic == true) {
+                            self.elasticBehavior.elasticity = 1
+                        }
                     }
                 } )
+            
         }
     }
     

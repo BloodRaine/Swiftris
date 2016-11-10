@@ -19,6 +19,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var booPic: UIImageView!
+    @IBOutlet weak var datstack: UIStackView!
     
 
     override func viewDidLoad() {
@@ -27,6 +29,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         // Configure the view.
         let skView = view as! SKView
         skView.isMultipleTouchEnabled = false
+        
         
         // Create and configure the scene.
         scene = GameScene(size: skView.bounds.size)
@@ -49,7 +52,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
                 self.scene.addPreviewShapeToScene(shape: nextShapes.nextShape!) {}
             }
         }
-        */
+ */
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -135,6 +138,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         
         //scene.playSound(sound: "Sounds/gameover.mp3")
         scene.animateCollapsingLines(linesToRemove: swiftris.removeAllBlocks(), fallenBlocks: swiftris.removeAllBlocks()) {
+            self.booPic.alpha = 0;
             swiftris.beginGame()
         }
  
@@ -168,6 +172,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         let removedLines = swiftris.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
             self.scoreLabel.text = "\(swiftris.score)"
+            self.booPic.alpha += 0.01;
             scene.animateCollapsingLines(linesToRemove: removedLines.linesRemoved, fallenBlocks: removedLines.fallenBlocks) {
                 self.gameShapeDidLand(swiftris: swiftris)
             }
@@ -181,4 +186,17 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(shape: swiftris.fallingShape!) {}
     }
+    
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        datstack.isHidden = false
+        scene.isPaused = true
+    }
+    
+    @IBAction func resumeButtonPressed(_ sender: UIButton) {
+        datstack.isHidden = true
+        scene.isPaused = false
+    }
+    
+    
 }

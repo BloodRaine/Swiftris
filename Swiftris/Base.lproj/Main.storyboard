@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yaq-bk-0XO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yaq-bk-0XO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,8 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="65r-F7-FxT">
+                                <rect key="frame" x="16" y="220" width="343" height="253"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-EA-ivC">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="71"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
                                         <state key="normal" title="Play Game" backgroundImage="button"/>
                                         <connections>
@@ -29,6 +34,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-Gu-wAW">
+                                        <rect key="frame" x="0.0" y="91" width="343" height="71"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
                                         <state key="normal" title="How To Play" backgroundImage="button">
                                             <color key="titleColor" red="0.99241146585803552" green="0.98023917478575762" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,6 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wg-si-oHY">
+                                        <rect key="frame" x="0.0" y="182" width="343" height="71"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
                                         <state key="normal" title="Dont Touch This" backgroundImage="button">
                                             <color key="titleColor" red="0.97622299089470932" green="0.99510899901924588" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,23 +83,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Boo" translatesAutoresizingMaskIntoConstraints="NO" id="sCX-qb-t1H">
+                                <rect key="frame" x="37" y="150" width="160" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCS-9o-kKv">
-                                <frame key="frameInset" minX="224" minY="118" width="84" height="100"/>
+                                <rect key="frame" x="224" y="118" width="84" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="87Q-FD-8Hj">
-                                        <frame key="frameInset" width="84" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6q6-3w-fG0">
-                                        <frame key="frameInset" minX="10" minY="10" width="70" height="21"/>
+                                        <rect key="frame" x="10" y="10" width="70" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.1333333333" green="0.64705882349999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-pf-4uw">
-                                        <frame key="frameInset" minY="45" width="84" height="39"/>
+                                        <rect key="frame" x="0.0" y="45" width="84" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="39"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.6470588235294118" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,22 +112,22 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ed6-rZ-aXu">
-                                <frame key="frameInset" minX="224" minY="237" width="84" height="100"/>
+                                <rect key="frame" x="224" y="237" width="84" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="vqB-cM-Glb">
-                                        <frame key="frameInset" width="84" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LEVEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggr-U9-3vV">
-                                        <frame key="frameInset" minX="10" minY="10" width="70" height="21"/>
+                                        <rect key="frame" x="10" y="10" width="70" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.54509803921568623" green="0.45490196078431372" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="l23-4Z-2tt">
-                                        <frame key="frameInset" minY="45" width="84" height="39"/>
+                                        <rect key="frame" x="0.0" y="45" width="84" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="39"/>
                                         <color key="textColor" red="0.54509803921568623" green="0.45490196078431372" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,26 +136,44 @@
                                 </subviews>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-PW-hsM">
-                                <frame key="frameInset" minX="224" minY="345" width="84" height="100"/>
+                                <rect key="frame" x="224" y="345" width="84" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-lD-F29">
-                                <frame key="frameInset" minX="224" minY="345" width="84" height="100"/>
+                                <rect key="frame" x="224" y="345" width="84" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wcV-ht-sYh"/>
+                                </connections>
                             </button>
                             <stackView hidden="YES" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="D1y-xq-G2H">
+                                <rect key="frame" x="16" y="184" width="343" height="168"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dju-u8-cG8">
-                                        <state key="normal" title="Main Menu"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-tk-AVk">
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="71"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
+                                        <state key="normal" title="Main Menu" backgroundImage="button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.56025032722513091" green="0.56025032722513091" blue="0.56025032722513091" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="yaq-bk-0XO" kind="presentation" id="4yK-RA-INd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-en-rB8">
-                                        <state key="normal" title="Resume"/>
+                                        <rect key="frame" x="0.0" y="97" width="343" height="71"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="35"/>
+                                        <state key="normal" title="Resume" backgroundImage="button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.56595631544502623" green="0.56595631544502623" blue="0.56595631544502623" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resumeButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="UJ8-2M-vsj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.80280595549738221" green="0.80280595549738221" blue="0.80280595549738221" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.15312090964921465" green="0.15312090964921465" blue="0.15312090964921465" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,7 +181,7 @@
                         <constraints>
                             <constraint firstItem="D1y-xq-G2H" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="Va6-AP-NOm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="D1y-xq-G2H" secondAttribute="trailing" id="nUN-tk-UET"/>
-                            <constraint firstItem="D1y-xq-G2H" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="119" id="uBh-x3-OJw"/>
+                            <constraint firstItem="D1y-xq-G2H" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="164" id="uBh-x3-OJw"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n0e-aa-dH0" appends="YES" id="tF7-dA-T4Q"/>
@@ -161,6 +190,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="booPic" destination="sCX-qb-t1H" id="thy-ct-h19"/>
+                        <outlet property="datstack" destination="D1y-xq-G2H" id="gnj-KP-yju"/>
                         <outlet property="levelLabel" destination="l23-4Z-2tt" id="0SK-qb-vgP"/>
                         <outlet property="scoreLabel" destination="YvQ-pf-4uw" id="ruZ-UB-Hby"/>
                     </connections>
@@ -193,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Boo" width="200" height="193"/>
         <image name="button" width="200" height="71"/>
         <image name="whitebg" width="84" height="100"/>
     </resources>
