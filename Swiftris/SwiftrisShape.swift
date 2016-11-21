@@ -10,8 +10,6 @@ import UIKit
 
 class SwiftrisShape: UIImageView {
     
-    
-    
     var shapes = ["Square","IShape", "JShape", "LShape", "TShape", "SShape"]
 
     init(atPoint point: CGPoint, radius: CGFloat) {

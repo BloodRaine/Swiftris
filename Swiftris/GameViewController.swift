@@ -41,17 +41,6 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         
         // Present the scene.
         skView.presentScene(scene)
-        
-        /*
-        scene.addPreviewShapeToScene(shape: swiftris.nextShape!) {
-            self.swiftris.nextShape?.moveTo(column: StartingColumn, row: StartingRow)
-            self.scene.movePreviewShape(shape: self.swiftris.nextShape!) {
-                let nextShapes = self.swiftris.newShape()
-                self.scene.startTicking()
-                self.scene.addPreviewShapeToScene(shape: nextShapes.nextShape!) {}
-            }
-        }
- */
     }
     
     override var prefersStatusBarHidden: Bool {
